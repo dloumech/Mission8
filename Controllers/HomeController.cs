@@ -27,6 +27,16 @@ namespace Mission8.Controllers
         {
             return View();
         }
+        // adding ViewTask View
+        public IActionResult ViewTask()
+        {
+            return View();
+        }
+
+        public IActionResult AddTask()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
