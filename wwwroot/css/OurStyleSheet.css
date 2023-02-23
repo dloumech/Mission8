@@ -1,0 +1,20 @@
+﻿/*Padding for website*/
+.yellow{
+    padding-left:275px;
+    padding-right:275px;
+}
+
+/*Bold title on index page*/
+.red{
+    font-weight:bold;
+}
+
+/*change nav bar hover feature*/
+a:hover{
+    font-weight:bold;
+}
+
+/*Buttons on viewtask page*/
+.blue{
+
+}

@@ -37,5 +37,13 @@ namespace Mission8.Controllers
         {
             return View();
         }
+
+        //need something like the following below for category data
+        //[HttpGet]
+        //public IActionResult FillOutForm()
+        //{
+        //    ViewBag.Categories = blahContext.Category.ToList();
+        //    return View("MovieForm");
+        
     }
 }
