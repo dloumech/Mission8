@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Task Form";
 }
-@model Mission8.Models.TaskRepsonse
+@model Mission8.Models.TaskResponse
 
 <h1>Task Form</h1>
 <div>
@@ -18,21 +18,21 @@
         <label asp-for="DueDate">Due Date:</label>
         <input asp-for="DueDate" /><br />
 
-        <label asp-for="Quadrant">Quadrant:</label>
-        <select asp-for="Quadrant">
-            <option>Select a Quadrant:</option>
-            <option value=1>One</option>
-            <option value=2>Two</option>
-            <option value=3>Three</option>
-            <option value=4>Four</option>
+        <label asp-for="QuadrantId">Quadrant:</label>
+        <select asp-for="QuadrantId">
+            <option value="">Select a Quadrant:</option>
+            @foreach (Quadrant q in ViewBag.Quadrants)
+            {
+                <option value="@q.QuadrantId">@q.QuadrantName</option>
+            }
         </select><br />
 
         <label asp-for="CategoryId">Task Category:</label>
         <select asp-for="CategoryId">
             <option value="">Select a Category:</option>
-            @foreach (CategoryTable c in ViewBag.Categories)
+            @foreach (Category c in ViewBag.Categories)
             {
-                <option value="@c.CategoryId">@c.Category</option>
+                <option value="@c.CategoryId">@c.CategoryName</option>
             }
         </select><br />
 
