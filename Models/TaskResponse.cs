@@ -18,12 +18,11 @@ namespace Mission8.Models
         public DateTime DueDate { get; set; }
         [Required(ErrorMessage ="Must select a Category")]
         public bool Completed { get; set; }
+        public int Quadrant { get; set;}
 
         [Required]
         //foreign key relationships
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int QuadrantId { get; set; }
-        public Quadrant Quadrant { get; set; }
     }
 }
