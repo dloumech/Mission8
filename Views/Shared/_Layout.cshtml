@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mission8</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -13,5 +13,8 @@
         <a asp-controller="Home" asp-action="AddTask"> | Add Task</a>
         <a asp-controller="Home" asp-action="ViewTask"> | View Task</a>
     </header>
+    <div>
+        @RenderBody()
+    </div>
 </body>
 </html>
