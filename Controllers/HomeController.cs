@@ -27,13 +27,13 @@ namespace Mission8.Controllers
         }
 
         [HttpGet]
-        public IActionResult FillOutForm()
+        public IActionResult AddTask()
         {
             ViewBag.Categories = _taskContext.Categories.ToList();
             return View("AddTask");
         }
         [HttpPost]
-        public IActionResult FillOutForm(TaskResponse response)
+        public IActionResult AddTask(TaskResponse response)
         {
             if (ModelState.IsValid)
             {
