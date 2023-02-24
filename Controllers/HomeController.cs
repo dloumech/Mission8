@@ -39,7 +39,7 @@ namespace Mission8.Controllers
             {
                 _taskContext.Add(response);
                 _taskContext.SaveChanges();
-                return View("ViewTask");
+                return View("Confirmation");
             }
             else
             {
