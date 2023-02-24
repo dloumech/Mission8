@@ -39,7 +39,7 @@ namespace Mission8.Controllers
             {
                 _taskContext.Add(response);
                 _taskContext.SaveChanges();
-                return View("ViewTask");
+                return View("ViewTask", response);
             }
             else
             {
@@ -53,6 +53,7 @@ namespace Mission8.Controllers
         public IActionResult ViewTask()
         {
             var tasks = _taskContext.Responses
+                .Where(x => x.Completed == false)
                 .Include(x => x.Category)
                 .OrderBy(x => x.Quadrant)
                 .ToList();
@@ -82,7 +83,7 @@ namespace Mission8.Controllers
         {
             var aTaskId = _taskContext.Responses.Single(x => x.TaskId == TaskId);
             
-            return View(aTaskId);
+            return View("Delete", aTaskId);
         }
         [HttpPost]
         public IActionResult Delete(TaskResponse tr)
@@ -97,6 +98,28 @@ namespace Mission8.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpGet]
+        public IActionResult Completed(int applicationid)
+        {
+       
+            var application = _taskContext.Responses.Single(x => x.TaskId == applicationid);
+            return View("Completed", application);
+        }
+
+        [HttpPost]
+        public IActionResult Completed(TaskResponse tr)
+        { 
+            tr.Completed = true;
+            _taskContext.Update(tr);
+            _taskContext.SaveChanges();
+            return RedirectToAction("ViewTask");
+
+            
+            
+        }
+
+
     }
 }
 
