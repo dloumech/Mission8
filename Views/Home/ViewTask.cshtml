@@ -33,12 +33,16 @@
                 @*the line below is pulling up errors*@
                 @foreach (var x in Model)
                 {
-                    <li>
-                        @x.Task
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
-                    </li>
+                    @if (x.Quadrant == 1)
+                    {
+                        <li>
+                            @x.Task
+                            <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Completed" asp-route-taskid="@x.TaskId">Completed</a>
+                        </li>
+                    }
+
                 }
             </ul>
         </div>
@@ -47,12 +51,15 @@
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>
-                        @x.Task
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
-                    </li>
+                    @if (x.Quadrant == 2)
+                    {
+                        <li>
+                            @x.Task
+                            <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Completed" asp-route-taskid="@x.TaskId">Completed</a>
+                        </li>
+                    }
                 }
             </ul>
         </div>
@@ -67,12 +74,16 @@
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>
-                        @x.Task
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
-                    </li>
+                    @if (x.Quadrant == 3)
+                    {
+                        <li>
+                            @x.Task
+                            <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Completed" asp-route-taskid="@x.TaskId">Completed</a>
+                        </li>
+
+                    }
                 }
             </ul>
         </div>
@@ -81,12 +92,17 @@
             <ul>
                 @foreach (var x in Model)
                 {
-                    <li>
-                        @x.Task
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
-                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
-                    </li>
+                    @if (x.Quadrant == 4)
+                    {
+                        <li>
+                            @x.Task
+                            <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                            <a class="text-dark" asp-controller="Home" asp-action="Completed" asp-route-taskid="@x.TaskId">Completed</a>
+                        </li>
+
+                    }
+
                 }
             </ul>
         </div>
