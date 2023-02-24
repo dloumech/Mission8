@@ -39,7 +39,7 @@ namespace Mission8.Controllers
             {
                 _taskContext.Add(response);
                 _taskContext.SaveChanges();
-                return View("ViewTask");
+                return RedirectToAction("ViewTask");
             }
             else
             {
@@ -53,6 +53,7 @@ namespace Mission8.Controllers
         public IActionResult ViewTask()
         {
             var tasks = _taskContext.Responses
+                .Where(x => x.Completed == false)
                 .Include(x => x.Category)
                 .OrderBy(x => x.Quadrant)
                 .ToList();
@@ -82,7 +83,7 @@ namespace Mission8.Controllers
         {
             var aTaskId = _taskContext.Responses.Single(x => x.TaskId == TaskId);
             
-            return View(aTaskId);
+            return View("Delete", aTaskId);
         }
         [HttpPost]
         public IActionResult Delete(TaskResponse tr)
