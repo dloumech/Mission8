@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Time-Management Matrix";
 }
+
+@model List<TaskResponse>
+
  <br /><br />
 
 <div class="container border border-outside" style="background-color: tan">
@@ -27,22 +30,30 @@
         <div class="col-5 border">
             <h5 class="text-center">Quadrant 1</h5>
             <ul>
-                <li>
-                    Task1
-                    <a class = "text-dark" asp-controller="Home" asp-action="Edit" asp-route-movieid="">Edit</a>
-                    <a class = "text-dark" asp-controller="Home" asp-action="Delete" asp-route-movieid="">Delete</a>
-                    <a class = "text-dark" asp-controller="Home" asp-action="Completed" asp-route-movieid="">Completed</a>
-                </li>
-                <li>
-                    Task2
-                    <a class = "text-dark" asp-controller="Home" asp-action="Edit" asp-route-movieid="">Edit</a>
-                    <a class = "text-dark" asp-controller="Home" asp-action="Delete" asp-route-movieid="">Delete</a>
-                    <a class = "text-dark" asp-controller="Home" asp-action="Edit" asp-route-movieid="">Completed</a>
-                </li>
+                @foreach (var x in Model)
+                {
+                    <li>
+                        @x.Task
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
+                    </li>
+                }
             </ul>
         </div>
         <div class="col-5 border">
             <h5 class="text-center">Quadrant 2</h5>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>
+                        @x.Task
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 
@@ -52,9 +63,31 @@
         </div>
         <div class="col-5 border">
             <h5 class="text-center">Quadrant 3</h5>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>
+                        @x.Task
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
+                    </li>
+                }
+            </ul>
         </div>
         <div class="col-5 border-left border-top">
             <h5 class="text-center">Quadrant 4</h5>
+            <ul>
+                @foreach (var x in Model)
+                {
+                    <li>
+                        @x.Task
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Delete</a>
+                        <a class="text-dark" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Completed</a>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 </div>
