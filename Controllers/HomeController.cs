@@ -92,6 +92,16 @@ namespace Mission8.Controllers
             return RedirectToAction("ViewTask");
         }
 
+        [HttpGet]
+        public IActionResult Completed(int TaskId)
+        {
+            var taskComplete = _taskContext.Responses.Single(x => x.TaskId == TaskId);
+            taskComplete.Completed = true;
+            _taskContext.Update(taskComplete);
+            _taskContext.SaveChanges();
+            return RedirectToAction("ViewTask");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
